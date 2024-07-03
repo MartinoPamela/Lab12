@@ -37,6 +37,8 @@ class View(ft.UserControl):
         self.ddyear = ft.Dropdown(label="Anno")
         self.ddcountry= ft.Dropdown(label="Nazione")
 
+        self._controller.fillDD
+
         self.btn_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handle_graph)
 
         row1 = ft.Row([self.ddyear, self.ddcountry, self.btn_graph],
@@ -55,7 +57,7 @@ class View(ft.UserControl):
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
 
-        self.txtOut2 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
+        self.txtOut2 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=False)
         self._page.controls.append(self.txtOut2)
         self._page.update()
 
@@ -66,7 +68,7 @@ class View(ft.UserControl):
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row3)
 
-        self.txtOut3 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
+        self.txtOut3 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=False)
         self._page.controls.append(self.txtOut3)
         self._page.update()
 
